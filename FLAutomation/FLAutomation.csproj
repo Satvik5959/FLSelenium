@@ -65,6 +65,7 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="DataList\Cost Centers and descriptions.xlsx" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
