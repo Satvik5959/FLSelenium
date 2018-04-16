@@ -1,5 +1,4 @@
-﻿using log4net;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
@@ -32,7 +31,7 @@ namespace FLAutomation
                 js = driver as IJavaScriptExecutor;
                 driver.Manage().Window.Maximize();
                 driver.Navigate().GoToUrl(baseURL);
-                signin();
+                Signin();
             }
             catch (Exception)
             {
@@ -59,13 +58,12 @@ namespace FLAutomation
         #endregion
 
 
-        public void signin()
+        public void Signin()
         {
             driver.FindElement(By.Id("userid")).Clear();
             driver.FindElement(By.Id("userid")).SendKeys("CANREQ");
             driver.FindElement(By.Name("pwd1")).Clear();
             driver.FindElement(By.Name("pwd1")).SendKeys("Password10");
-            Thread.Sleep(1000);
             driver.FindElement(By.Name("butSignOn")).Click();
         }
     }
