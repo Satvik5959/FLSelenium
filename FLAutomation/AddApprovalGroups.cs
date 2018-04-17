@@ -15,12 +15,44 @@ namespace FLAutomation
         {
             driver.Navigate().GoToUrl(AddNewGroupCode);
             driver.FindElement(By.Name("txtAuthGroupCode")).Clear();
-            driver.FindElement(By.Name("txtAuthGroupCode")).SendKeys("105-Z999");
+            driver.FindElement(By.Name("txtAuthGroupCode")).SendKeys("105-Z100");
             driver.FindElement(By.Name("txtDescription")).Clear();
-            driver.FindElement(By.Name("txtDescription")).SendKeys("Balance Sheet");
+            driver.FindElement(By.Name("txtDescription")).SendKeys("Suspense");
             driver.FindElement(By.Name("txtAdministrator")).Clear();
             driver.FindElement(By.Name("txtAdministrator")).SendKeys("MANAGER");
             driver.FindElement(By.Name("butSubmit")).Click();
         }
+        public void AddWorkflow()
+        {
+            Thread.Sleep(200);
+            driver.FindElement(By.Name("butAddNew")).Click();
+            driver.FindElement(By.Name("txtBand")).Clear();
+            driver.FindElement(By.Name("txtBand")).SendKeys("500");
+            driver.FindElement(By.Name("chkAppliesTo1")).Click();
+            driver.FindElement(By.Name("chkAppliesTo2")).Click();
+            driver.FindElement(By.Name("chkAppliesTo3")).Click();
+            driver.FindElement(By.Name("chkAppliesTo4")).Click();
+            driver.FindElement(By.Name("chkLineManagerReqd")).Click();
+            driver.FindElement(By.Name("butSubmit")).Click();
+        }
+        public void AddWorkflow2()
+        {
+            Thread.Sleep(200);
+            driver.FindElement(By.Name("butAddNewAppr")).Click();
+            driver.FindElement(By.Name("txtAuthoriser")).Clear();
+            driver.FindElement(By.Name("txtAuthoriser")).SendKeys("BUDGETHOLDER");
+            driver.FindElement(By.Name("chkMandatory")).Click();
+            //add 10 in sequence
+            //click submit
+
+            //go back to original screen
+            //click submit
+            //change approvers required to 1
+            //click submit
+            //change send to = 1
+            //click submit
+            //click back
+        }
+
     }
 }

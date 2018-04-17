@@ -10,8 +10,10 @@ namespace FLAutomation
             ab.TestInitialize();
             AddApprovalGroups apg = new AddApprovalGroups();
             apg.InsertApprover();
-            //Thread.Sleep(1000);
-            //ab.TestCleanup();
+            apg.AddWorkflow();
+            apg.AddWorkflow2();
+            Thread.Sleep(1000);
+            ab.TestCleanup();
         }
     }
 }
